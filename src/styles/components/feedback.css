@@ -1,0 +1,50 @@
+.empty-state {
+  padding: 48px 15px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state strong {
+  display: block;
+  color: #36443c;
+  font-size: var(--type-md);
+  margin-bottom: 4px;
+}
+
+.empty-state p {
+  font-size: var(--type-sm);
+  margin: 0 0 14px;
+}
+
+.form-error {
+  font-size: var(--type-xs);
+  color: var(--red);
+  margin: 0;
+}
+
+.toast {
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: #1f3026;
+  color: #fff;
+  padding: 12px 17px;
+  border-radius: 11px;
+  box-shadow: var(--shadow);
+  font-size: var(--type-sm);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.toast svg {
+  width: 16px;
+  height: 16px;
+  color: #95d8b5;
+}
+
+.hidden {
+  display: none !important;
+}

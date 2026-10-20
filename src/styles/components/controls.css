@@ -1,0 +1,212 @@
+.button {
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--type-sm);
+  font-weight: 650;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    transform 0.15s;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button-primary {
+  color: #fff;
+  background: var(--green);
+}
+
+.button-primary:hover {
+  background: var(--green-dark);
+}
+
+.button-secondary {
+  color: #4f5a54;
+  background: #fff;
+  border-color: var(--line);
+}
+
+.button-secondary:hover {
+  background: #f4f7f5;
+}
+
+.button-danger {
+  color: #fff;
+  background: #b3463c;
+}
+
+.button-soft-danger {
+  color: var(--red);
+  background: var(--red-soft);
+}
+
+.button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 440px;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #87918b;
+  width: 17px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 43px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fff;
+  padding: 0 12px 0 40px;
+  font-size: var(--type-md);
+}
+
+.select {
+  height: 43px;
+  padding: 0 34px 0 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: #58645d;
+  font-size: var(--type-sm);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1/-1;
+}
+
+.field label,
+.fieldset-label {
+  font-size: var(--type-xs);
+  font-weight: 640;
+  color: #4e5a53;
+}
+
+.optional-note {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid #dfe5e1;
+  border-radius: 10px;
+  padding: 10px 11px;
+  color: #27332c;
+  background: #fff;
+  font-size: var(--type-md);
+}
+
+.field input,
+.field select {
+  height: 42px;
+}
+
+.field textarea {
+  min-height: 74px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #a3aca6;
+}
+
+.field-hint {
+  font-size: var(--type-xs);
+  color: var(--muted);
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.radio-card {
+  position: relative;
+}
+
+.radio-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-card label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  height: 43px;
+  font-size: var(--type-sm);
+  font-weight: 630;
+  cursor: pointer;
+}
+
+.radio-card input:checked + label {
+  border-color: #76ad91;
+  background: var(--green-soft);
+  color: var(--green-dark);
+}
+
+.radio-card:has(input[value="keluar"] input:checked + label) {
+  color: var(--red);
+}
+
+.quantity-control {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 8px;
+}
+
+.quantity-control button {
+  border: 1px solid var(--line);
+  background: #f8faf8;
+  border-radius: 10px;
+  font-size: var(--type-xl);
+  color: #526158;
+}
+
+.quantity-control input {
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.radio-card input:focus-visible + label {
+  outline: 3px solid #5ba989;
+  outline-offset: 3px;
+}

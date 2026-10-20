@@ -65,7 +65,7 @@ export function Modal({ dialog, item, categories = [], storageLocations = [], on
               <div className="field"><label htmlFor="fLocation">Lokasi penyimpanan *</label><select id="fLocation" name="storageLocation" required defaultValue={storageLocations[0] || ''}><option value="" disabled>Pilih lokasi</option>{storageLocations.map((value) => <option key={value}>{value}</option>)}</select></div>
               <div className="field"><label htmlFor="fLocationDetails">Detail lokasi</label><input id="fLocationDetails" name="locationDetails" placeholder="Lemari 2 atau Rak B" /></div>
               <div className="field full"><label htmlFor="fUse">Kegunaan</label><textarea id="fUse" name="use" placeholder="Jelaskan fungsi alat" /></div>
-              <div className="field full"><label htmlFor="fImage">URL foto <span style={{ fontWeight: 400, color: 'var(--muted)' }}>(opsional)</span></label><input id="fImage" name="image" type="url" placeholder="https://contoh.com/foto.jpg" /></div>
+              <div className="field full"><label htmlFor="fImage">URL foto <span className="optional-note">(opsional)</span></label><input id="fImage" name="image" type="url" placeholder="https://contoh.com/foto.jpg" /></div>
             </div>
           ) : (
             <>
@@ -78,7 +78,7 @@ export function Modal({ dialog, item, categories = [], storageLocations = [], on
                 </div>
               </fieldset>
               <div className="field" style={{ marginBottom: 15 }}><label htmlFor="fQuantity">Jumlah unit *</label><div className="quantity-control"><button type="button" aria-label="Kurangi jumlah" onClick={() => setQuantity((value) => Math.max(1, value - 1))}>−</button><input id="fQuantity" name="quantity" type="number" inputMode="numeric" min="1" max={type === 'keluar' ? item.stock : 99999} value={quantity} onChange={(event) => setQuantity(Number(event.target.value))} required /><button type="button" aria-label="Tambah jumlah" onClick={() => setQuantity((value) => Math.min(type === 'keluar' ? item.stock : 99999, value + 1))}>+</button></div><div className="field-hint">{type === 'keluar' ? `Maksimal ${item.stock} unit dapat dikeluarkan.` : 'Jumlah akan ditambahkan ke stok saat ini.'}</div></div>
-              <div className="field"><label htmlFor="fNote">Keterangan <span style={{ fontWeight: 400, color: 'var(--muted)' }}>(opsional)</span></label><textarea id="fNote" name="note" placeholder="Contoh: Dipinjam untuk syuting" /></div>
+              <div className="field"><label htmlFor="fNote">Keterangan <span className="optional-note">(opsional)</span></label><textarea id="fNote" name="note" placeholder="Contoh: Dipinjam untuk syuting" /></div>
             </>
           )}
           <div role="alert">{error && <p className="form-error">{error}</p>}</div>
