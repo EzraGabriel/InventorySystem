@@ -16,6 +16,11 @@ export function loadInventory() {
 }
 
 export function saveInventory(items, mutations) {
-  localStorage.setItem('ruangstok_items', JSON.stringify(items));
-  localStorage.setItem('ruangstok_mutations', JSON.stringify(mutations));
+  const removeLocalImageUrls = (records) => records.map((record) => {
+    if (!record.imageId) return record;
+    const { image, ...storedRecord } = record;
+    return storedRecord;
+  });
+  localStorage.setItem('ruangstok_items', JSON.stringify(removeLocalImageUrls(items)));
+  localStorage.setItem('ruangstok_mutations', JSON.stringify(removeLocalImageUrls(mutations)));
 }

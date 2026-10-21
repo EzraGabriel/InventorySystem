@@ -3,5 +3,6 @@ export const navItems = [
   ['inventory', 'Inventaris', 'box'],
   ['mutations', 'Mutasi', 'history'],
   ['calendar', 'Kalender', 'calendar'],
+  ['approvals', 'Persetujuan', 'approval'],
   ['masterData', 'Data master', 'settings'],
 ];

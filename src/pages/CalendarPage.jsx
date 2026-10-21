@@ -32,7 +32,6 @@ export function CalendarPage({
   items,
   activityLocations = [],
   currentUser,
-  onRoleChange,
   onCreate,
   onUpdate,
   onReview,
@@ -115,15 +114,7 @@ export function CalendarPage({
           <span>Mode frontend</span>
           <strong>{roleName}</strong>
         </div>
-        <label htmlFor="calendarRole">Lihat sebagai</label>
-        <select
-          id="calendarRole"
-          value={currentUser.role}
-          onChange={(event) => onRoleChange(event.target.value)}
-        >
-          <option value="volunteer">Volunteer</option>
-          <option value="supervisor">Supervisor</option>
-        </select>
+        <span className="calendar-role-session">Masuk sebagai {roleName}</span>
       </section>
       <section
         className="calendar-layout"

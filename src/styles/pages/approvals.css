@@ -1,0 +1,156 @@
+.approval-panel {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.approval-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.approval-panel-head h2 {
+  font-size: var(--type-md);
+}
+
+.approval-panel-head .panel-sub {
+  margin-bottom: 0;
+}
+
+.approval-count {
+  min-width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #765017;
+  background: var(--amber-soft);
+  font-size: var(--type-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.approval-list {
+  display: grid;
+}
+
+.approval-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.approval-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.approval-applicant-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  flex: none;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green-dark);
+  background: var(--green-soft);
+}
+
+.approval-applicant-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.approval-applicant {
+  min-width: 0;
+  flex: 1;
+}
+
+.approval-applicant h3 {
+  color: #34443a;
+  font-size: var(--type-md);
+}
+
+.approval-applicant p {
+  overflow-wrap: anywhere;
+  margin: 2px 0 3px;
+  color: #4d5e53;
+  font-size: var(--type-sm);
+}
+
+.approval-applicant small {
+  color: #596b60;
+  font-size: var(--type-xs);
+}
+
+.approval-actions {
+  display: flex;
+  flex: none;
+  gap: 7px;
+}
+
+.approval-actions .button {
+  min-height: 38px;
+  padding-inline: 11px;
+}
+
+.approval-empty {
+  min-height: 190px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 6px;
+  color: #526158;
+  text-align: center;
+}
+
+.approval-empty > svg {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 4px;
+  color: var(--green);
+}
+
+.approval-empty strong {
+  color: #34443a;
+  font-size: var(--type-sm);
+}
+
+.approval-empty p {
+  margin: 0;
+  font-size: var(--type-xs);
+}
+
+@media (max-width: 600px) {
+  .approval-panel {
+    padding: 15px;
+  }
+
+  .approval-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .approval-applicant {
+    width: calc(100% - 48px);
+    flex: none;
+  }
+
+  .approval-actions {
+    width: 100%;
+    padding-left: 48px;
+  }
+
+  .approval-actions .button {
+    flex: 1;
+  }
+}

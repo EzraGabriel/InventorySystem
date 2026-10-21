@@ -142,6 +142,69 @@
   color: #a3aca6;
 }
 
+.image-upload-field input[type="file"] {
+  height: auto;
+  min-height: 42px;
+  padding: 5px 7px;
+  color: #4e5a53;
+}
+
+.image-upload-field input[type="file"]::file-selector-button {
+  min-height: 30px;
+  margin-right: 9px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  font: 600 var(--type-xs)/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.image-upload-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  margin-top: 3px;
+  color: #4e5a53;
+  font-size: var(--type-xs);
+}
+
+.image-upload-preview img {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-upload-preview span {
+  min-width: 0;
+  overflow: hidden;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-upload-preview button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  flex: none;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: var(--red);
+  background: var(--red-soft);
+}
+
+.image-upload-preview button svg {
+  width: 15px;
+  height: 15px;
+}
+
 .field-hint {
   font-size: var(--type-xs);
   color: var(--muted);

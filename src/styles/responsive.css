@@ -441,10 +441,10 @@
     min-height: 48px;
   }
   .bottom-nav.is-supervisor {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   .bottom-nav.is-supervisor a {
-    font-size: var(--type-xs);
+    font-size: 0.625rem;
     gap: 1px;
   }
   .bottom-nav.is-supervisor a svg {

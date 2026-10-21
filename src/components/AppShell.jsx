@@ -5,7 +5,7 @@ import { Topbar } from './Topbar.jsx';
 import { BottomNav } from './BottomNav.jsx';
 import { Toast } from './Toast.jsx';
 
-export function AppShell({ children, modal, toast, currentUser }) {
+export function AppShell({ children, modal, toast, currentUser, onLogout }) {
   const { pathname } = useLocation();
   const isDetail = /^\/inventory\/[^/]+\/?$/.test(pathname);
   const pageLabel = isDetail ? 'Detail barang' : pathname.startsWith('/inventory') ? 'Inventaris' : pathname.startsWith('/mutations') ? 'Mutasi' : pathname.startsWith('/master-data') ? 'Data master' : pathname.startsWith('/calendar') ? 'Kalender' : 'Beranda';
@@ -14,7 +14,7 @@ export function AppShell({ children, modal, toast, currentUser }) {
       <Sidebar currentUser={currentUser} />
       <MobileHeader currentUser={currentUser} />
       <div className="workspace">
-        <Topbar pageLabel={pageLabel} />
+        <Topbar pageLabel={pageLabel} onLogout={onLogout} />
         <main className="main" tabIndex={-1}>{children}</main>
       </div>
       <BottomNav role={currentUser?.role} />

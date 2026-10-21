@@ -1,4 +1,4 @@
-import { ArrowRight, Camera, Package, Plus } from 'lucide-react';
+﻿import { ArrowRight, Camera, Package, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ActivityList } from '../components/ActivityList.jsx';
 import { Button } from '../components/Button.jsx';
@@ -7,7 +7,8 @@ import { UpcomingRequests } from '../components/UpcomingRequests.jsx';
 
 export function DashboardPage({ items, mutations, requests, currentUser, onAddItem }) {
   const total = items.reduce((sum, item) => sum + item.stock, 0);
-  const lowStock = items.filter((item) => item.stock <= 2);
+  const isPc = (item) => item.assetType === 'pc' || item.category?.trim().toLowerCase() === 'pc';
+  const lowStock = items.filter((item) => !isPc(item) && item.stock <= 2);
   const categories = new Set(items.map((item) => item.category)).size;
   const exhausted = items.filter((item) => item.stock === 0).length;
 
@@ -36,7 +37,7 @@ export function DashboardPage({ items, mutations, requests, currentUser, onAddIt
           {lowStock.length ? (
             <div className="low-list">
               {lowStock.slice(0, 4).map((item) => (
-                <div className="low-item" key={item.id}><img className="thumb" src={item.image} alt="" /><div className="low-info"><div className="low-name">{item.name}</div><div className="low-meta">{item.location.split(' · ')[0]}</div></div><span className={`stock-pill ${item.stock ? 'low' : 'out'}`}>{item.stock ? `${item.stock} unit` : 'Habis'}</span></div>
+                <div className="low-item" key={item.id}><img className="thumb" src={item.image} alt="" /><div className="low-info"><div className="low-name">{item.name}</div><div className="low-meta">{item.location.split(' Â· ')[0]}</div></div><span className={`stock-pill ${item.stock ? 'low' : 'out'}`}>{item.stock ? `${item.stock} unit` : 'Habis'}</span></div>
               ))}
             </div>
           ) : <div className="empty-state"><strong>Semua stok aman</strong><p>Tidak ada barang yang perlu diperiksa.</p></div>}

@@ -11,7 +11,7 @@ export function ItemCard({ item, onOpen }) {
             <div className="item-name">{item.name}</div>
             <div className="item-brand">{item.brand}</div>
           </div>
-          <StockStatus stock={item.stock} />
+          <StockStatus stock={item.stock} exemptFromLowStock={item.assetType === 'pc' || item.category?.trim().toLowerCase() === 'pc'} />
         </div>
         <div className="item-meta">
           <div className="item-location"><MapPin aria-hidden="true" /><span>{item.location}</span></div>

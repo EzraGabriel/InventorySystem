@@ -17,6 +17,23 @@
   margin: 11px 0 5px;
 }
 
+.detail-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.detail-edit-button {
+  flex: 0 0 auto;
+  margin-top: 8px;
+}
+
+.detail-edit-button svg {
+  width: 16px;
+  height: 16px;
+}
+
 .detail-brand {
   font-size: var(--type-md);
   color: var(--muted);
@@ -99,4 +116,109 @@
 
 .back-button svg {
   width: 16px;
+}
+
+.pc-components-panel {
+  margin-top: 22px;
+}
+
+.pc-components-head,
+.pc-component-form-head,
+.pc-component-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pc-components-head h2,
+.pc-component-form-head h3 {
+  margin: 0;
+  font-size: var(--type-lg);
+}
+
+.pc-components-head .panel-sub {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: var(--type-sm);
+}
+
+.pc-component-list {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.pc-component-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pc-component-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 12px;
+  color: var(--primary);
+  background: #f0f5f1;
+}
+
+.pc-component-icon svg { width: 19px; height: 19px; }
+.pc-component-info { display: grid; gap: 3px; min-width: 0; flex: 1; }
+.pc-component-info strong { font-size: var(--type-sm); }
+.pc-component-info span { color: var(--muted); font-size: var(--type-sm); overflow-wrap: anywhere; }
+.pc-component-info small { color: #89938d; font-size: var(--type-xs); }
+.pc-component-actions { display: flex; gap: 5px; }
+.pc-component-actions button,
+.pc-component-form-head button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--type-xs);
+}
+.pc-component-actions svg { width: 14px; height: 14px; }
+.pc-remove-confirm { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; width: 100%; padding: 10px 12px; border-radius: 10px; background: #fff7f5; font-size: var(--type-sm); }
+.pc-remove-confirm span { flex: 1; }
+.pc-components-empty { margin-top: 16px; padding: 18px; border: 1px dashed var(--line); border-radius: 12px; }
+.pc-components-empty p { margin: 5px 0 0; color: var(--muted); font-size: var(--type-sm); }
+.pc-component-form { margin-top: 18px; padding: 16px; border-radius: 13px; background: #f7f9f7; }
+.pc-component-form-head { margin-bottom: 14px; }
+.pc-component-form-head button { width: 36px; padding: 0; }
+.pc-component-form-head svg { width: 16px; height: 16px; }
+.pc-component-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.pc-component-form-grid .field.full { grid-column: 1 / -1; }
+.pc-component-form-actions { justify-content: flex-end; margin-top: 14px; }
+.pc-component-history { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+.pc-component-history summary { cursor: pointer; font-size: var(--type-sm); font-weight: 600; }
+.pc-component-history summary span { margin-left: 5px; color: var(--muted); font-weight: 500; }
+.pc-component-history ol { display: grid; gap: 13px; margin: 14px 0 0; padding-left: 20px; }
+.pc-component-history li { padding-left: 4px; color: var(--muted); font-size: var(--type-sm); }
+.pc-component-history li > div { display: flex; justify-content: space-between; gap: 12px; color: var(--ink); }
+.pc-component-history time,
+.pc-component-history small { color: #89938d; font-size: var(--type-xs); }
+.pc-component-history p { margin: 5px 0 0; }
+
+@media (max-width: 560px) {
+  .detail-title-row { align-items: flex-start; flex-wrap: wrap; }
+  .detail-edit-button { margin-top: 0; }
+  .pc-components-head { align-items: flex-start; flex-direction: column; }
+  .pc-component-row { align-items: flex-start; flex-wrap: wrap; }
+  .pc-component-actions { margin-left: 53px; }
+  .pc-remove-confirm { margin-left: 53px; }
+  .pc-component-form-grid { grid-template-columns: 1fr; }
+  .pc-component-form-grid .field.full { grid-column: auto; }
+  .pc-component-history li > div { flex-direction: column; gap: 2px; }
 }
